@@ -22,3 +22,5 @@ jobs:
         echo "Actor: ${{ github.actor }}"
         echo "Run ID: ${{ github.run_id }}"
         echo "Workflow: ${{ github.workflow }}"
+        echo "This run originated from: ${{ github.repository }}"
+        echo "Link to run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}",
