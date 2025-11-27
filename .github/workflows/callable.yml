@@ -1,0 +1,24 @@
+name: Callable Workflow
+on:
+  workflow_dispatch:
+  workflow_call:
+    inputs:
+      example_input:
+        type: string
+        description: 'An example input parameter'
+        required: false
+        default: 'default_value'
+
+jobs:
+  print-variables:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Print environment variables
+      run: |
+        echo "Example Input: ${{ inputs.example_input }}"
+        echo "Repository: ${{ github.repository }}"
+        echo "Branch: ${{ github.ref }}"
+        echo "Actor: ${{ github.actor }}"
+        echo "Run ID: ${{ github.run_id }}"
+        echo "Workflow: ${{ github.workflow }}"
